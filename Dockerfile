@@ -15,5 +15,3 @@ COPY sshd_config /etc/ssh/
 EXPOSE 80 2222
 
 CMD ["/bin/init_container.sh"]
-
-CMD ["/usr/bin/hhvm", "-m", "server", "-c", "/etc/hhvm/server.ini", "-c", "/etc/hhvm/site.ini"]
