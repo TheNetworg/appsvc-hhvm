@@ -1,6 +1,8 @@
 FROM hhvm/hhvm:latest
 MAINTAINER Jan Hajek <hajek.j@hotmail.com>
 
+COPY init_container.sh /bin/
+
 ADD server.ini /etc/hhvm/server.ini
 RUN touch /etc/hhvm/site.ini \
     && echo "root:Docker!" | chpasswd \
@@ -8,7 +10,6 @@ RUN touch /etc/hhvm/site.ini \
     && apt install -y --no-install-recommends openssh-server \
     && chmod 755 /bin/init_container.sh 
 
-COPY init_container.sh /bin/
 COPY sshd_config /etc/ssh/
 
 EXPOSE 80 2222
