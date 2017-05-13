@@ -12,6 +12,6 @@ RUN touch /etc/hhvm/site.ini \
 
 COPY sshd_config /etc/ssh/
 
-EXPOSE 80 2222
+EXPOSE 2222 80
 
 CMD ["/bin/init_container.sh"]
